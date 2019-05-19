@@ -1,0 +1,33 @@
+// @import "../layout/content-sidebar";
+// @import "../layout/sidebar-content";
+.grid {
+    grid-template-areas:
+        "header header"
+        "aside content"
+        "footer footer";
+}
+.content-area, .header-wrapper, aside {
+    padding: 1em;
+}
+.content-area, aside {
+    margin: 0 auto;
+    max-width: 1500px;
+}
+.site-content {
+    margin-top: 80px;
+}
+
+/*--------------------------------------------------------------
+## Hero
+--------------------------------------------------------------*/
+@import "primary/hero";
+
+/*--------------------------------------------------------------
+## Posts and pages
+--------------------------------------------------------------*/
+@import "primary/posts-and-pages";
+
+/*--------------------------------------------------------------
+## Comments
+--------------------------------------------------------------*/
+@import "primary/comments";
