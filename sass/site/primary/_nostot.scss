@@ -1,0 +1,21 @@
+.nosto {
+    display: flex;
+    flex-direction: column;
+    .w-50 {
+        width: 100%;
+    }
+}
+.nosto:nth-of-type(2n) {
+    flex-direction: column;
+}
+@media screen and (min-width: 37.5em) {
+    .nosto {
+        flex-direction: row;
+        .w-50 {
+            width: 50%;
+        }
+    }
+    .nosto:nth-of-type(2n) {
+        flex-direction: row-reverse;
+    }
+}

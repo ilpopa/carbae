@@ -46,9 +46,16 @@
 				<?php endif; ?>
 
 			</div><!-- .site-branding -->
-
 			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'carbae' ); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<span class="sr-only">Avaa menu</span>
+				<div class="mobile-menu-icon">
+					<span></span>
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+				</button>
 				<?php
 				wp_nav_menu( array(
 					'theme_location' => 'menu-1',
@@ -57,6 +64,7 @@
 				?>
 			</nav><!-- #site-navigation -->
 		</div>
+		
 	</header><!-- #masthead -->
 				
 	<div id="content" class="site-content">

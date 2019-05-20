@@ -116,6 +116,49 @@ function carbae_widgets_init() {
 }
 add_action( 'widgets_init', 'carbae_widgets_init' );
 
+/* Nosto post type *
+function cptui_register_my_cpts_nosto() {
+
+	/**
+	 * Post Type: nostot.
+	 *
+
+	$labels = array(
+		"name" => __( "nostot", "carbae" ),
+		"singular_name" => __( "nosto", "carbae" ),
+		"menu_name" => __( "Nostot", "carbae" ),
+		"all_items" => __( "Kaikki nostot", "carbae" ),
+	);
+
+	$args = array(
+		"label" => __( "nostot", "carbae" ),
+		"labels" => $labels,
+		"description" => "Etusivun nostot",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"delete_with_user" => false,
+		"show_in_rest" => true,
+		"rest_base" => "",
+		"rest_controller_class" => "WP_REST_Posts_Controller",
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"exclude_from_search" => true,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => array( "slug" => "nosto", "with_front" => true ),
+		"query_var" => true,
+		"supports" => array( "title", "editor", "thumbnail", "custom-fields" ),
+	);
+
+	register_post_type( "nosto", $args );
+}
+
+add_action( 'init', 'cptui_register_my_cpts_nosto' );
+*/
+
 /**
  * Enqueue scripts and styles.
  */
@@ -125,6 +168,8 @@ function carbae_scripts() {
 	wp_enqueue_script( 'carbae-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'carbae-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+
+	wp_enqueue_script( 'custom-script', get_template_directory_uri() . '/js/custom-script.js');
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

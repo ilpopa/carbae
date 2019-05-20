@@ -1,10 +1,13 @@
 // @import "../layout/content-sidebar";
 // @import "../layout/sidebar-content";
-.grid {
+/* .grid {
     grid-template-areas:
         "header header"
         "aside content"
         "footer footer";
+} */
+.sr-only {
+    display: none;
 }
 .content-area, .header-wrapper, aside {
     padding: 1em;
@@ -21,6 +24,10 @@
 ## Hero
 --------------------------------------------------------------*/
 @import "primary/hero";
+/*--------------------------------------------------------------
+## Nostot
+--------------------------------------------------------------*/
+@import "primary/nostot";
 
 /*--------------------------------------------------------------
 ## Posts and pages
