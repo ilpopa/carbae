@@ -9,17 +9,32 @@
 .sr-only {
     display: none;
 }
-.content-area, .header-wrapper, aside {
+.header-wrapper {
     padding: 1em;
 }
 .content-area, aside {
     margin: 0 auto;
-    max-width: 1500px;
+    max-width: 100%; /* 1500px */
 }
 .site-content {
     margin-top: 80px;
+    transition: filter 0.3s ease;
+    &::before {
+        content: "";
+        display: block;
+        top: 0px;
+        left: -5px;
+        position: fixed;
+        background: rgba(0,0,0,0.65) none repeat scroll 0% 0%;
+        z-index: 0;
+        opacity: 0;
+    }
 }
-
+.wrapper {
+    background-color: #2e3141;
+    margin: 6.5em 0;
+    position: relative; 
+}
 /*--------------------------------------------------------------
 ## Hero
 --------------------------------------------------------------*/
@@ -28,6 +43,7 @@
 ## Nostot
 --------------------------------------------------------------*/
 @import "primary/nostot";
+@import "primary/cards";
 
 /*--------------------------------------------------------------
 ## Posts and pages

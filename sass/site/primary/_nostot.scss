@@ -1,8 +1,16 @@
 .nosto {
     display: flex;
     flex-direction: column;
+    position: relative;
     .w-50 {
         width: 100%;
+        img {
+            vertical-align: middle;
+        }
+    }
+    .nostotext {
+        background-color: $color__background-header;
+        color: #ffffff;
     }
 }
 .nosto:nth-of-type(2n) {
@@ -14,8 +22,45 @@
         .w-50 {
             width: 50%;
         }
+        &:before, &:after {
+            background-repeat: no-repeat;
+            background-size: 100% 100%;
+            content: '';
+            display: block;
+            height:10em;
+            position: absolute;
+            width: 100%;
+            left: 0;
+            top: -10em;
+            transform: scale(1);
+            background: $color__pink-dark;
+            -clip-path: polygon(100% 0, 0 100%, 100% 100%);
+            clip-path: polygon(100% 0, 0 100%, 100% 100%);
+           /*  -webkit-clip-path: polygon(0 0, 100% 50%, 100% 50%, 0 100%);
+            clip-path: polygon(0 0, 100% 50%, 100% 50%, 0 100%); */
+            /* -webkit-clip-path: polygon(70% 40%, 100% 0, 100% 100%, 70% 40%, 0 100%, 0 0);
+            clip-path: polygon(70% 40%, 100% 0, 100% 100%, 70% 40%, 0 100%, 0 0); */
+            /* background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100' preserveAspectRatio='none'%3E%3Cpolygon points='0,100 100,0 100,100' style='fill:%234c5c96%3B' /%3E%3C/svg%3E"); */
+        }
+        &:after {
+            top: initial;
+            height: 25%;
+            bottom: 0;
+            transform: scaleX(-1);
+            content: none;
+        }
     }
     .nosto:nth-of-type(2n) {
         flex-direction: row-reverse;
+        &::before {
+            transform: scaleX(-1);
+            left: initial;
+            right: 0;
+        }
+        &::after {
+            transform: scaleX(1);
+            left: initial;
+            right: 0;
+        }
     }
 }

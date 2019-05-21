@@ -1,0 +1,26 @@
+.flex-posts {
+    width: 55em;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2em;
+}
+.card {
+    background-color: #353849;
+    border-radius: 5px;
+    margin: 1.5em 3em 1.5em 0;
+    width: calc(50% - 1.5em);
+    color: #ffffff;
+    &:nth-child(2n) {
+        margin-right: 0;
+    }
+
+    img {
+        border-radius: 5px 5px 0 0;
+        width: 100%;
+    }
+    .article-text {
+        padding: 0.5em;
+    }
+}

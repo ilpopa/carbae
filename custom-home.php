@@ -31,7 +31,7 @@ get_header();
         <div class="nostot">
 
         <?php 
-            $args = array( 'post_type' => 'nosto', 'posts_per_page' => 10 );
+            $args = array( 'post_type' => 'nosto', 'posts_per_page' => 10, 'orderby' => 'post_date', );
             $the_query = new WP_Query( $args ); 
             ?>
             <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
@@ -51,7 +51,31 @@ get_header();
             <?php wp_reset_query(); ?>
 
         </div>
-		
+        <!-- Post cards -->
+		<section class="front-page-posts wrapper">
+            <div class="flex-posts">
+
+                <?php 
+                $args = array( 'post_type' => 'post', 'posts_per_page' => 4 );
+                $the_query = new WP_Query( $args ); 
+                ?>
+                <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
+                <article class="card">
+                    <div class="card-image">
+                        <?php if(has_post_thumbnail()) {  
+                            the_post_thumbnail(); 
+                        } ?>
+                    </div>
+                    
+                    <div class="article-text">
+                        <h1 class="article-title"><?php the_title() ;?></h1>
+                        <div class="article-content"><?php the_excerpt() ?></div>
+                    </div>
+                </article>
+                <?php endwhile; else: ?> <p>Sorry, there are no posts to display</p> <?php endif; ?>
+                <?php wp_reset_query(); ?>
+            </div>
+        </section>
 
         <section class="contact">
             <?php echo do_shortcode("[ninja_form id=1]"); ?>
