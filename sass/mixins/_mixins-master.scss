@@ -27,3 +27,65 @@
 @mixin column-width($numberColumns: 3) {
 	width: map-get( $columns, $numberColumns ) - ( ( $columns__margin * ( $numberColumns - 1 ) ) / $numberColumns );
 }
+
+// Media Queries
+@mixin mobile {
+	@media (max-width: #{$mobile-width }) {
+		@content;
+	}
+}
+@mixin tablet {
+	@media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+		@content;
+	}
+}
+  
+@mixin desktop {
+	@media (min-width: #{$desktop-width}) {
+		@content;
+	}
+}
+
+
+// After triangle
+@mixin before-element {
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	content: '';
+	display: block;
+	height: 5em;
+	position: absolute;
+	width: 100%;
+	left: 0;
+	top: -4.9em;
+	transform: scale(1);
+	background: $color__background-body;
+	-clip-path: polygon(100% 0, 0 100%, 100% 100%);
+	clip-path: polygon(100% 0, 0 100%, 100% 100%);
+	@include desktop {
+		height: 10em;
+		top: -9.9em;
+	}
+}
+@mixin after-element {
+	@include before-element();
+	top: initial;
+	bottom: -4.9em;
+	@include desktop() {
+		height: 10em;
+		bottom: -9.9em;
+		top: initial;
+	}
+}
+
+// padded container 
+@mixin main-content {
+	max-width: $size__site-main-max;
+    padding: $container-padding;
+	margin: 0 auto;
+}
+@mixin form-inputs {
+	background: transparent;
+	border: $thin-grey-border;
+	border-radius: 3px;
+}

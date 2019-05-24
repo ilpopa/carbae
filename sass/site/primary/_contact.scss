@@ -1,0 +1,32 @@
+.contact {
+    color: #ffffff;
+    @include main-content;
+    @include mobile {
+        padding: 1em;
+    }
+    h3 {
+        text-transform: uppercase;
+        padding-bottom: 1em;
+        border-bottom: $thin-grey-border;
+    }
+    .ninja-forms-field,
+    .nf-form-content .list-select-wrap .nf-field-element>div, .nf-form-content input:not([type=button]), .nf-form-content textarea,
+    .nf-form-content input[type=button] {
+        @include form-inputs;
+        color: #ffffff;
+        &:focus {
+            border-color: $color__border-input-focus;
+            background: rgba(255, 255, 255, 0.25);
+            color: #ffffff;
+        }
+    }
+    .nf-form-content input[type=button] {
+        text-transform: uppercase;
+        font-weight: bold;
+        color: #ffffff;
+        &:hover {
+            background-color: rgba(255, 255, 255, 0.025);
+            color: #ffffff;
+        }
+    }
+}

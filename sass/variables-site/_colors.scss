@@ -1,4 +1,4 @@
-$color__background-body: #fff;
+$color__background-body: #2e3141;;
 $color__background-header: #111;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
@@ -19,5 +19,8 @@ $color__text-main: #404040;
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
+$color__border-input-focus: #5b6ba6;
+$color__border-input: rgba(255, 255, 255, 0.125);
 $color__border-abbr: #666;
+
+$thin-grey-border: solid 2px rgba(255, 255, 255, 0.125);

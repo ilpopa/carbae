@@ -466,7 +466,7 @@ html {
 }
 
 body {
-  background: #fff;
+  background: #2e3141;
   /* Fallback for when there is no custom background color defined. */
 }
 
@@ -572,7 +572,7 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
   color: #666;
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.125);
   border-radius: 3px;
   padding: 3px;
 }
@@ -597,7 +597,7 @@ textarea:focus {
 }
 
 select {
-  border: 1px solid #ccc;
+  border: 1px solid rgba(255, 255, 255, 0.125);
 }
 
 textarea {
@@ -1038,6 +1038,15 @@ a:hover, a:active {
   /* 1500px */
 }
 
+body, body.custom-background {
+  background-color: #2e3141;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(rgba(46, 49, 65, 0.8)), to(rgba(46, 49, 65, 0.8))), url("bg.jpg");
+  background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("bg.jpg");
+  background-size: auto, cover;
+  background-attachment: fixed, fixed;
+  background-position: center, center;
+}
+
 .site-content {
   margin-top: 80px;
   -webkit-transition: -webkit-filter 0.3s ease;
@@ -1061,6 +1070,18 @@ a:hover, a:active {
   background-color: #2e3141;
   margin: 6.5em 0;
   position: relative;
+}
+
+.site-footer {
+  max-width: 64em;
+  padding: 2em;
+  margin: 0 auto;
+}
+
+@media (max-width: 420px) {
+  .site-footer {
+    padding: 1em;
+  }
 }
 
 /*--------------------------------------------------------------
@@ -1135,7 +1156,7 @@ a:hover, a:active {
     top: -10em;
     -webkit-transform: scale(1);
             transform: scale(1);
-    background: #d41e5b;
+    background: #2e3141;
     -clip-path: polygon(100% 0, 0 100%, 100% 100%);
     -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
             clip-path: polygon(100% 0, 0 100%, 100% 100%);
@@ -1174,8 +1195,8 @@ a:hover, a:active {
 }
 
 .flex-posts {
-  width: 55em;
-  max-width: 100%;
+  width: 100%;
+  max-width: 64em;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1183,6 +1204,74 @@ a:hover, a:active {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   padding: 2em;
+}
+
+.flex-posts::before {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  content: '';
+  display: block;
+  height: 5em;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: -4.9em;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  background: #2e3141;
+  -clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
+          clip-path: polygon(100% 0, 0 100%, 100% 100%);
+}
+
+@media (min-width: 1024px) {
+  .flex-posts::before {
+    height: 10em;
+    top: -9.9em;
+  }
+}
+
+.flex-posts:after {
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  content: '';
+  display: block;
+  height: 5em;
+  position: absolute;
+  width: 100%;
+  left: 0;
+  top: -4.9em;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  background: #2e3141;
+  -clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  -webkit-clip-path: polygon(100% 0, 0 100%, 100% 100%);
+          clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  top: initial;
+  bottom: -4.9em;
+  -webkit-transform: scaleY(-1);
+          transform: scaleY(-1);
+}
+
+@media (min-width: 1024px) {
+  .flex-posts:after {
+    height: 10em;
+    top: -9.9em;
+  }
+}
+
+@media (min-width: 1024px) {
+  .flex-posts:after {
+    height: 10em;
+    bottom: -9.9em;
+    top: initial;
+  }
+}
+
+@media (max-width: 420px) {
+  .flex-posts {
+    padding: 1em;
+  }
 }
 
 .card {
@@ -1200,10 +1289,79 @@ a:hover, a:active {
 .card img {
   border-radius: 5px 5px 0 0;
   width: 100%;
+  max-height: 260px;
+}
+
+.card h1 {
+  border-bottom: solid 2px rgba(255, 255, 255, 0.125);
 }
 
 .card .article-text {
-  padding: 0.5em;
+  padding: 1em;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .card {
+    margin: 1em 2em 1em 0;
+    width: calc(50% - 1em);
+  }
+}
+
+@media (max-width: 420px) {
+  .card {
+    width: 100%;
+    margin: 1em;
+  }
+  .card:nth-child(2n) {
+    margin-right: 1em;
+  }
+}
+
+.contact {
+  color: #ffffff;
+  max-width: 64em;
+  padding: 2em;
+  margin: 0 auto;
+}
+
+@media (max-width: 420px) {
+  .contact {
+    padding: 1em;
+  }
+}
+
+.contact h3 {
+  text-transform: uppercase;
+  padding-bottom: 1em;
+  border-bottom: solid 2px rgba(255, 255, 255, 0.125);
+}
+
+.contact .ninja-forms-field,
+.contact .nf-form-content .list-select-wrap .nf-field-element > div, .contact .nf-form-content input:not([type=button]), .contact .nf-form-content textarea,
+.contact .nf-form-content input[type=button] {
+  background: transparent;
+  border: solid 2px rgba(255, 255, 255, 0.125);
+  border-radius: 3px;
+  color: #ffffff;
+}
+
+.contact .ninja-forms-field:focus,
+.contact .nf-form-content .list-select-wrap .nf-field-element > div:focus, .contact .nf-form-content input:not([type=button]):focus, .contact .nf-form-content textarea:focus,
+.contact .nf-form-content input[type=button]:focus {
+  border-color: #5b6ba6;
+  background: rgba(255, 255, 255, 0.25);
+  color: #ffffff;
+}
+
+.contact .nf-form-content input[type=button] {
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.contact .nf-form-content input[type=button]:hover {
+  background-color: rgba(255, 255, 255, 0.025);
+  color: #ffffff;
 }
 
 /*--------------------------------------------------------------

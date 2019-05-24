@@ -16,6 +16,13 @@
     margin: 0 auto;
     max-width: 100%; /* 1500px */
 }
+body, body.custom-background {
+    background-color: $color__background-body;
+    background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url("bg.jpg");
+    background-size: auto, cover;
+    background-attachment: fixed, fixed;
+    background-position: center, center;
+}
 .site-content {
     margin-top: 80px;
     transition: filter 0.3s ease;
@@ -35,6 +42,12 @@
     margin: 6.5em 0;
     position: relative; 
 }
+.site-footer {
+    @include main-content;
+    @include mobile {
+        padding: 1em;
+    }
+}
 /*--------------------------------------------------------------
 ## Hero
 --------------------------------------------------------------*/
@@ -44,6 +57,7 @@
 --------------------------------------------------------------*/
 @import "primary/nostot";
 @import "primary/cards";
+@import "primary/contact";
 
 /*--------------------------------------------------------------
 ## Posts and pages

@@ -20,7 +20,7 @@ get_header();
         if( $image ): ?>
         <style type="text/css">
             #hero {
-                background-image: url(<?php echo $image['url']; ?>);
+                background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url(<?php echo $image['url']; ?>);
             }
         </style>
         <?php endif; ?>
