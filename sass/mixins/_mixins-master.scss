@@ -63,8 +63,8 @@
 	-clip-path: polygon(100% 0, 0 100%, 100% 100%);
 	clip-path: polygon(100% 0, 0 100%, 100% 100%);
 	@include desktop {
-		height: 10em;
-		top: -9.9em;
+		height: 7em;
+		top: -6.9em;
 	}
 }
 @mixin after-element {
@@ -72,8 +72,8 @@
 	top: initial;
 	bottom: -4.9em;
 	@include desktop() {
-		height: 10em;
-		bottom: -9.9em;
+		height: 7em;
+		bottom: -6.9em;
 		top: initial;
 	}
 }
@@ -88,4 +88,29 @@
 	background: transparent;
 	border: $thin-grey-border;
 	border-radius: 3px;
+}
+//link Arrow
+@mixin link-arrow {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-family: FontAwesome;
+	font-style: normal;
+	font-weight: normal;
+	text-transform: none;
+	-moz-transition: background-color 0.2s ease-in-out;
+	-webkit-transition: background-color 0.2s ease-in-out;
+	-ms-transition: background-color 0.2s ease-in-out;
+	transition: background-color 0.2s ease-in-out;
+	border-radius: 100%;
+	border: solid 2px rgba(255, 255, 255, 0.125);
+	content: '\f105';
+	display: inline-block;
+	font-size: 1em;
+	height: 2em;
+	line-height: 1.65em;
+	margin-right: 0.85em;
+	text-align: center;
+	text-indent: 0.15em;
+	vertical-align: middle;
+	width: 2em; 
 }

@@ -8,9 +8,9 @@ get_header();
 ?>
     <div id="hero" class="hero-image">
 
-        <div class="container">
-            <h2><?php the_field('sub_title'); ?></h2>
+        <div class="title-container">
             <h1><?php the_field('title'); ?></h1>
+            <h2><?php the_field('sub_title'); ?></h2>
         </div>
         
         <?php 
@@ -20,7 +20,7 @@ get_header();
         if( $image ): ?>
         <style type="text/css">
             #hero {
-                background-image: linear-gradient(to top, rgba(46, 49, 65, 0.8), rgba(46, 49, 65, 0.8)), url(<?php echo $image['url']; ?>);
+                background-image: linear-gradient(to top, rgba(0, 0, 0, 0.8), rgba(31, 22, 33, 0.4)), url(<?php echo $image['url']; ?>);
             }
         </style>
         <?php endif; ?>
@@ -36,12 +36,17 @@ get_header();
             ?>
             <?php if ( $the_query->have_posts() ) : while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
             <section class="nosto">
-                <div class="nosto-image w-50">
-                    <?php if(has_post_thumbnail()) {  
-                         the_post_thumbnail(); 
-                         } ?>
-                </div>
-            
+                <?php if(has_post_thumbnail()) { ?>  
+                    <div class="nosto-image w-50">
+                        <?php  
+                        //the_post_thumbnail();
+                        ?>
+                        <div class="nosto-bg" style="background-image: url('<?php the_post_thumbnail_url(); ?>')">
+
+                        </div>
+                    </div>
+                <?php  } ?>
+                        
                 <div class="nostotext w-50">
                     <h1 class="nosto-title"><?php the_title() ;?></h1>
                     <div class="nosto-content"><?php the_content() ?></div>
@@ -70,6 +75,7 @@ get_header();
                     <div class="article-text">
                         <h1 class="article-title"><?php the_title() ;?></h1>
                         <div class="article-content"><?php the_excerpt() ?></div>
+                        <a class="article-link" href="<?php echo get_permalink( get_option( 'page_for_posts' ) ); ?>">Lue lisää</a>
                     </div>
                 </article>
                 <?php endwhile; else: ?> <p>Sorry, there are no posts to display</p> <?php endif; ?>

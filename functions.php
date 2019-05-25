@@ -163,6 +163,8 @@ add_action( 'init', 'cptui_register_my_cpts_nosto' );
  * Enqueue scripts and styles.
  */
 function carbae_scripts() {
+	wp_enqueue_style( 'font-awesome', 'https://use.fontawesome.com/releases/v5.8.2/css/all.css' );
+
 	wp_enqueue_style( 'carbae-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'carbae-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

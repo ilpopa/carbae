@@ -1,4 +1,4 @@
-// @import "../layout/content-sidebar";
+@import "../layout/content-sidebar";
 // @import "../layout/sidebar-content";
 /* .grid {
     grid-template-areas:
@@ -9,10 +9,7 @@
 .sr-only {
     display: none;
 }
-.header-wrapper {
-    padding: 1em;
-}
-.content-area, aside {
+.home .content-area {
     margin: 0 auto;
     max-width: 100%; /* 1500px */
 }
@@ -23,8 +20,11 @@ body, body.custom-background {
     background-attachment: fixed, fixed;
     background-position: center, center;
 }
+.home .site-main {
+    margin: 0;
+}
 .site-content {
-    margin-top: 80px;
+    margin-top: 57px;
     transition: filter 0.3s ease;
     &::before {
         content: "";
@@ -36,6 +36,9 @@ body, body.custom-background {
         z-index: 0;
         opacity: 0;
     }
+    @include desktop {
+        margin-top: 88px;
+    }
 }
 .wrapper {
     background-color: #2e3141;
@@ -43,6 +46,7 @@ body, body.custom-background {
     position: relative; 
 }
 .site-footer {
+    color: #ffffff;
     @include main-content;
     @include mobile {
         padding: 1em;

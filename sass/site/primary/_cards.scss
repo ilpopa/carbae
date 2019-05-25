@@ -1,3 +1,9 @@
+.front-page-posts {
+    margin-top: 0em;
+    @include desktop {
+        margin-top: 0em;
+    }
+}
 .flex-posts {
     width: 100%;
     max-width: $size__site-main-max;
@@ -6,7 +12,8 @@
     flex-wrap: wrap;
     padding: $container-padding;
     &::before {
-       @include before-element;
+        @include before-element;
+        transform: scaleX(-1);
     }
     &:after {
         @include after-element;
@@ -37,6 +44,18 @@
     .article-text {
         padding: 1em;
     }
+    .article-link {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: uppercase;
+        font-size: 0.9em;
+        &::before {
+            @include link-arrow;
+        }
+    }
+
+
     @include tablet {
         margin: 1em 2em 1em 0;
         width: calc(50% - 1em);

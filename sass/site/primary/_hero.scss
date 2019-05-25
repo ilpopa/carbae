@@ -1,6 +1,21 @@
+
 .hero-image {
     height: calc(100vh - 80px);
     display: flex;
     justify-content: center;
     align-items: center;
+    background-size: auto, cover;
+    background-attachment: fixed, fixed;
+    background-position: center, center;
+}
+.title-container {
+    color: #ffffff;
+    padding: 2em;
+    width: 55em;
+    h1 {
+        text-transform: uppercase;
+        margin-bottom: 0.8em;
+        padding-bottom: 0.4em;
+        border-bottom: $thin-grey-border;
+    }
 }

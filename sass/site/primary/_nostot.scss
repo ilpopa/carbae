@@ -2,6 +2,8 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    padding-bottom: 7em;
+    background-color: $nosto_bg_1;
     .w-50 {
         width: 100%;
         img {
@@ -9,31 +11,76 @@
         }
     }
     .nostotext {
-        background-color: $color__background-header;
+        /* background-color: $color__background-body; */
         color: #ffffff;
+        padding: 1em;
+        @include desktop {
+            padding: 5em 10% 3em 0;
+        }
+    }
+
+    .nosto-image {
+        padding: 2em;
+    }
+    .nosto-bg {
+        min-height: 250px;
+        height: 250px;
+        width: 250px;
+        border-radius: 50%;
+        background-size: cover;
+        background-position: center center;
+        margin: 0 auto;
+        @include desktop {
+            margin-right: 2em;min-height: 310px;
+            height: 310px;
+            width: 310px;
+        }
     }
 }
 .nosto:nth-of-type(2n) {
     flex-direction: column;
+    background-color: $nosto_bg_2;
+    text-align: right;
+    @include mobile {
+        text-align: left;
+    }
+    .nosto-bg {
+        @include desktop {
+            margin-right: auto;
+            margin-left: 2em;
+        }
+        
+    }
+    .nostotext {
+        @include desktop {
+            padding: 5em 0 3em 10%;
+        }
+    }
+}
+.nosto:nth-of-type(3n) {
+    background-color: $nosto_bg_3;
 }
 @media screen and (min-width: 37.5em) {
     .nosto {
         flex-direction: row;
         .w-50 {
-            width: 50%;
+            width: 55%;
+        }
+        .nosto-image {
+            width: 45%;
         }
         &:before, &:after {
             background-repeat: no-repeat;
             background-size: 100% 100%;
             content: '';
             display: block;
-            height:10em;
+            height:7em;
             position: absolute;
             width: 100%;
             left: 0;
-            top: -10em;
+            top: -6.99em;
             transform: scale(1);
-            background: $color__background-body;
+            background: $nosto_bg_1;
             -clip-path: polygon(100% 0, 0 100%, 100% 100%);
             clip-path: polygon(100% 0, 0 100%, 100% 100%);
            /*  -webkit-clip-path: polygon(0 0, 100% 50%, 100% 50%, 0 100%);
@@ -55,12 +102,25 @@
         &::before {
             transform: scaleX(-1);
             left: initial;
+            top: -7em;
             right: 0;
+            background-color: $nosto_bg_2;
         }
-        &::after {
-            transform: scaleX(1);
+       /*  &::after {
+            transform: scaleX(-1);
             left: initial;
             right: 0;
+            background-color: $nosto_bg_2;
+        } */
+    }
+    .nosto:nth-of-type(3n) {
+        &::before {
+            background-color: $nosto_bg_3;
         }
     }
+    /* .nosto:last-of-type {
+        &::after {
+            content: " ";
+        }
+    } */
 }

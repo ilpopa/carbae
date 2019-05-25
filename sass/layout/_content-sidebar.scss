@@ -5,13 +5,26 @@
 }
 
 .site-main {
-	margin: 0 $size__site-sidebar 0 0;
+	margin: 0;
+	@include desktop {
+		margin: 0 $size__site-sidebar 0 0;
+	}
 }
 
 .site-content .widget-area {
-	float: right;
+	float: left;
 	overflow: hidden;
-	width: $size__site-sidebar;
+	padding: 2em;
+	width: 100%;
+	background-color: #fff;
+	color: #000;
+	@include desktop {
+		width: $size__site-sidebar;
+		float: right;
+	}
+	input[type="search"], input {
+		border-color: rgba($color: #000000, $alpha: 0.75);
+	}
 }
 
 .site-footer {

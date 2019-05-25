@@ -21,3 +21,17 @@
 	clear: both;
 	margin: 0 0 1.5em;
 }
+.single .site-content {
+	max-width: 1500px;
+	margin: 0 auto;
+	margin-top: 5em;
+	@include desktop {
+		margin-top: 10em;
+	}
+}
+.single .site-main {
+	padding: $container-padding;
+	padding-top: 0;
+	color: #fff; 
+	background-color: $color__background-header;
+}

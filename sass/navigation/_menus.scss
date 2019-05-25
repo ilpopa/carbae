@@ -79,10 +79,13 @@
 	right: 0;
 	background-color: $color__background-header;
 	width: 14em;
-	top: 85px;
+	top: 57px;
 	height: 100vh;
 	transform: translateX(14em);
 	transition: all ease-in-out 0.5s;
+	@include desktop {
+		top: 85px;
+	}
 }
 .nav-open .site-content {
 	filter: blur(1.5px);
@@ -105,11 +108,14 @@
 /* Small menu. */
 .menu-toggle {
 	position: absolute;
-	top: 25px;
+	top: 8px;
 	right: 0;
 	display: block;
 	border: none;
 	background: transparent;
+	@include desktop {
+		top: 25px;
+	}
 }
 /* Mobile menu-toggle */
 
